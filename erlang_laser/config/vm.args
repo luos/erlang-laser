@@ -1,0 +1,6 @@
+-sname erlang_laser
+
+-setcookie erlang_laser_cookie
+
++K true
++A30
