@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "erlang_laser"
+		},
+		{
+			"path": "vscode_ls_client"
+		},
+		{
+			"path": "/home/luos/development/erlang/laser_tcp_jsonrpc"
+		}
+	],
+	"settings": {},
+	"lspMultiRootSample": {
+		"bleh": "blah"
+	}
+}

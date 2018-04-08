@@ -13,6 +13,8 @@
 %% Supervisor callbacks
 -export([init/1]).
 
+
+
 -define(SERVER, ?MODULE).
 
 %%====================================================================
@@ -28,7 +30,20 @@ start_link() ->
 
 %% Child :: {Id,StartFunc,Restart,Shutdown,Type,Modules}
 init([]) ->
-    {ok, { {one_for_all, 0, 1}, []} }.
+    {ok, { {one_for_one, 0, 1}, [
+        #{ id => laser_server, 
+           start => {laser_tcp_server, start_link, [
+               9999,
+               fun laser_workspaces_sup:create/1
+            ]},
+           restart => permanent
+         },
+         #{ 
+            id => laser_workspaces_sup,
+            start => {laser_workspaces_sup, start_link, []},
+            restart => permanent
+            }
+    ]} }.
 
 %%====================================================================
 %% Internal functions

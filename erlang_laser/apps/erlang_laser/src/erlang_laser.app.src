@@ -5,7 +5,10 @@
   {mod, { erlang_laser_app, []}},
   {applications,
    [kernel,
-    stdlib
+    stdlib,
+    'erlang-rfc4627',
+    cowboy,
+    jsx
    ]},
   {env,[]},
   {modules, []},
